@@ -1,6 +1,6 @@
 ## JW Exchange
 
-Currency conversion project using Ruby on Rails and React with automated testing using RSpec.
+Currency conversion project using Ruby on Rails with automated testing using RSpec.
 
 
 
