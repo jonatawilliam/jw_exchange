@@ -1,7 +1,9 @@
-## JW Exchange
+## JW Exchange  
+[ ![Codeship Status for codeship/scripts](https://app.codeship.com/projects/969e7d00-639d-0137-513b-1256e5107357/status?branch=master)](https://codeship.com/projects/344672)
 
 Currency conversion project using Ruby on Rails with automated testing using RSpec.
-
+<br></br>
+<br></br>
 
 
 ## Quick start
@@ -24,10 +26,12 @@ Now upload the the service created in Docker
 docker up
 ```
 
+
 Access the app by:
 [http://localhost:3000](http://localhost:3000)
 
 
+<br></br>
 
 The project is running with Docker, if you want to run local without Docker, follow the instructions below.
 
@@ -46,3 +50,5 @@ cd your-project-name
 rake db:create db:migrate db:seed
 rails s
 ```
+<br></br>
+<br></br>
