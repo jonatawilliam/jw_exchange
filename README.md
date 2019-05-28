@@ -3,6 +3,8 @@
 
 Currency conversion project using Ruby on Rails with automated testing using RSpec.
 <br></br>
+[DEMO](https://jw-exchange.herokuapp.com/)
+<br></br>
 <br></br>
 
 
