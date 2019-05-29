@@ -1,17 +1,19 @@
+<div>
+  <%= link_to (image_tag '/brazil.png'), root_path(locale: 'pt-BR'), class: 'btn-language-first' %>
+  <%= link_to (image_tag '/eua.png'), root_path(locale: :en), class: 'btn-language-all'%>
+  <%= link_to (image_tag '/spain.png'), root_path(locale: :es), class: 'btn-language-all'%>
+</div>
+
 <div class='container'>
   <div class='row main'>
   
     <div class='col-lg-5 offset-lg-1 hidden-sm-down title-box'>
       <div class='row'>
-        <h2 class='subtitle'>Easily Convert Your Coins</h2>
+        <h2 class='subtitle'><%= t 'global.exchanges.text-1' %></h2>
       </div>
                 
       <div class='row'>
-        <h3 class='subtitle'>For any currency in the World!</h3>
-      </div>
-      
-      <div class='row'>
-        <h3 class='subtitle'>And all about the value in BitCoin</h3>
+        <h3 class='subtitle'><%= t 'global.exchanges.text-2' %></h3>
       </div>
       
     </div>

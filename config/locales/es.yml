@@ -1,0 +1,10 @@
+es:
+  global:
+    exchanges: 
+      text-1: "Convierte fácilmente tus monedas"
+      text-2: "Para cualquier moneda en el mundo!"
+    _exchange_box:
+      title: "Simula tu conversión"
+      local_currency: "Moneda local"
+      intended_currency: "Moneda prevista"
+      amount: "Cantidad"

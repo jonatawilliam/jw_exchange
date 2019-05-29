@@ -1,19 +1,15 @@
 RSpec.configure do |config|
   config.before(:each) do   
-    stub_request(:get, /currencydatafeed.com/ )
+    stub_request(:get, /rest.coinapi.io/ )
     .with(headers: {
       'Accept'=>'*/*'
     }).to_return(status: 200, body: '
       {
-        "status": true,
-        "currency": [
-            {
-                "currency": "EUR/BRL",
-                "value": "4.51244",
-                "date": "2019-05-27 16:12:09",
-                "type": "original"
-            }
-        ]
+        "time": "2017-08-09T14:31:18.3150000Z",
+        "asset_id_base": "BTC",
+        "asset_id_quote": "USD",
+        "rate": 3260.3514321215056208129867667
+      }
       }', headers: {})
   end
 end

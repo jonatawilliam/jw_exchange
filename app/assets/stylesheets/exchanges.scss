@@ -5,6 +5,22 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.btn-language-first img{
+  width: 2%;
+  height: 2%;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 0;
+}
+
+.btn-language-all img{
+  width: 2%;
+  height: 2%;
+  margin-left: 2px;
+  margin-top: 10px;
+  border-radius: 0;
+}
  
 .main{
   margin-top: 50px;
