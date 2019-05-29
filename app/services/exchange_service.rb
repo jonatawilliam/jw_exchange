@@ -13,12 +13,20 @@ class ExchangeService
     begin
       exchange_api_url = Rails.application.credentials[Rails.env.to_sym][:currency_api_url]
       exchange_api_key = Rails.application.credentials[Rails.env.to_sym][:currency_api_key]
-      url = "#{exchange_api_url}?token=#{exchange_api_key}&currency=#{@source_currency}/#{@target_currency}"
+      url = "#{exchange_api_url}/v1/exchangerate/#{@source_currency}/#{@target_currency}?apikey=#{exchange_api_key}"
       answer = RestClient.get url
-      value = JSON.parse(answer.body)['currency'][0]['value'].to_f
-      value * @amount
+      value = JSON.parse(answer.body)['rate'].to_f
+      sprintf('%.10f', value * @amount)
     rescue RestClient::ExceptionWithResponse => e
       e.response
     end
+  end
+
+  def self.coins
+    exchange_api_url = Rails.application.credentials[Rails.env.to_sym][:currency_api_url]
+    exchange_api_key = Rails.application.credentials[Rails.env.to_sym][:currency_api_key]
+    url = "#{exchange_api_url}/v1/assets?apikey=#{exchange_api_key}"
+    answer = RestClient.get url
+    @coins ||= JSON.parse(answer.body).collect{ |coin| ["#{coin["asset_id"]} - #{coin["name"]}", coin["asset_id"]] }
   end
 end

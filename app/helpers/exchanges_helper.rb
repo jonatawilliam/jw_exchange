@@ -8,4 +8,8 @@ module ExchangesHelper
       'THB', 'TRY', 'USD', 'ZAR'
     ]
   end
+
+  def coins_currenty_list
+    ExchangeService.coins
+  end
 end

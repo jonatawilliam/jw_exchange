@@ -4,33 +4,72 @@
     <div class='card-header text-center'>
       Simulate your conversion
     </div>
+    </br>
+    <h1 class="card-title pricing-card-title text-center">
+      <input type='text' id='result' name='result' class='text-center' placeholder='0.0000000000' maxlength="14" readonly>
+    </h1>
  
     <div class='card-block'>
       <%= form_tag('/convert', method: :get, id: 'exchange_form') do %>
         <div class='local_currency'>
           <div class='form-group'>
-            <p class='title'>Local Currency</p>
-            <%= select_tag 'source_currency', options_for_select(currency_list, 'BRL'), class: 'form-control', id: 'source_currency' %>
-          </div>
- 
-          <div class='form-group'>
-            <input type='number' name='amount' id='amount' class='form-control' placeholder='Amount ($10)' step='any' required>
+            <div class='container'>
+              <div class='row main'>
+                <div class='col-sm-5 exchange_box'>
+                  <div class='row'>
+                    <p class='title'>Local Currency</p>
+                  </div>
+                  <div class='row'>
+                    <p></p>
+                  </div>
+                  <div class='row'>
+                    <p class='title'>Intended Currency</p>
+                  </div>
+                  <div class='row'>
+                    <p></p>
+                  </div>
+                  <div class='row'>
+                    <p class='title'>Amount</p>
+                  </div>
+                </div>
+
+
+                <div class='col-sm-4 exchange_box'>
+                  <div class='row'>
+                    <%= select_tag 'source_currency', options_for_select(coins_currenty_list, 'BRL'), class: 'form-control', id: 'source_currency' %>
+                  </div>
+                  <div class='row'>
+                    <p></p>
+                  </div>
+                  <div class='row'>
+                    <%= select_tag 'target_currency', options_for_select(coins_currenty_list, 'EUR'), class: 'form-control', id: 'target_currency'%>
+                  </div>
+                  <div class='row'>
+                    <p></p>
+                  </div>
+                  <div class='row'>
+                    <input type='number' name='amount' id='amount' class='form-control' placeholder='' step='any' required>
+                  </div>
+                </div>
+
+                <div class='col-sm-2 exchange_box'>
+                   <div class='row'>
+                    <p></p>
+                  </div>
+                  <div class='row'>
+                    <a href id='btn_change'><%= image_tag '/change.png', class: 'btn-change'%></a>
+                  </div>
+                   <div class='row'>
+                    <p></p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
-                    
-        <div class='destination_currency'>
-          <div class='form-group'>
-            <p class='title'>Intended Currency</p>
-            <%= select_tag 'target_currency', options_for_select(currency_list, 'EUR'), class: 'form-control', id: 'target_currency'%>
-          </div>
-          <div class='form-group'>
-            <input type='text' id='result' name='result' class='form-control' placeholder='Result' readonly>
-          </div>
-        </div>
-        <div>
-          <button type='submit' class='btn btn-primary btn-exchange col-md-12'>TO CONVERT</button>
-        </div>
+      </div>
+        
       <% end %>
-    </div>
   </div>
 </div>

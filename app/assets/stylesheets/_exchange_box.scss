@@ -2,10 +2,14 @@
  
   .card{
     border: 0;
+    border-radius: 10px;
+    opacity: 0.85;
  
     .card-header{
       background-color: #878d99;
       border-radius: 0;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px; 
       color: white;
       font-weight: 700;
     }
@@ -22,6 +26,24 @@
       .btn-exchange{
         background-color: #605ca8;
         border-color: #605ca8;
+        border-radius: 0;
+      }
+
+      .btn-change{
+        width: 60%;
+        height: 60%;
+        margin-left: 10px;
+        margin-top: 14px;
+        border-radius: 0;
+      }
+
+      .conversion{
+        color: #878d99;
+        font-weight: 700;
+        width: 60%;
+        height: 60%;
+        margin-left: 10px;
+        margin-top: 14px;
         border-radius: 0;
       }
     }
